@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TUGAS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h2, h3 {
+            text-align: center;
+            margin-bottom: 5px;
+        }
+        hr {
+            margin: 20px 0;
+            border: 1px solid #ccc;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        td {
+            padding: 8px;
+        }
+        input[type="text"], input[type="date"], input[type="email"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        fieldset {
+            margin-top: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding: 15px;
+        }
+        legend {
+            padding: 0 10px;
+            font-weight: bold;
+        }
+        .checkbox-group, .radio-group {
+            margin: 10px 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .checkbox-item, .radio-item {
+            display: flex;
+            align-items: center;
+            margin-right: 10px;
+        }
+        .note {
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+        .btn-submit {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+        .btn-submit:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h2>BIODATA SISWA</h2>
+    <p style="text-align: right;">Tanggal: <input type="date" style="width: auto;"></p>
+    <h3><b>FORM KUNJUNGAN LP3I BANDA ACEH KE SEKOLAH (LP3I GOES TO SCHOOL)</b></h3>
+    <hr>
+    <form action="">
+        <table>
+            <tr>    
+                <td>Nama</td>
+                <td><input type="text" maxlength="50" required></td>
+            </tr>
+            <tr>
+                <td>Tempat, Tanggal Lahir</td>
+                <td>
+                    <div style="display: flex; gap: 10px;">
+                        <input type="text" placeholder="Tempat lahir" style="flex: 1;">
+                        <input type="date" style="flex: 1;">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>Asal Sekolah</td>
+                <td><input type="text" maxlength="50" required></td>
+            </tr>
+            <tr>
+                <td>Kelas</td>
+                <td><input type="text" required></td>
+            </tr>
+            <tr>
+                <td>No WA/HP</td>
+                <td><input type="text" maxlength="20" required></td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td><input type="email" required></td>
+            </tr>
+            <tr>
+                <td>Nama Presenter</td>
+                <td><input type="text"></td>
+            </tr>
+            <tr>
+                <td>No HP Presenter</td>
+                <td><input type="text"></td>
+            </tr>
+            <tr>
+                <td>Keterangan</td>
+                <td class="note">
+                    <div><input type="radio" disabled> pilih salah satu</div>
+                    <div><input type="checkbox" disabled> boleh pilih lebih dari satu</div>
+                </td>
+            </tr>
+        </table>
+
+        <fieldset>
+            <legend><b>KUESIONER SINGKAT</b></legend>
+            
+            <div>
+                <p>1. Media sosial apa yang kamu gunakan?</p>
+                <div class="checkbox-group">
+                    <label class="checkbox-item"><input type="checkbox" name="social_media" value="Instagram"> Instagram</label>
+                    <label class="checkbox-item"><input type="checkbox" name="social_media" value="Tiktok"> Tiktok</label>
+                    <label class="checkbox-item"><input type="checkbox" name="social_media" value="Facebook"> Facebook</label>
+                    <label class="checkbox-item"><input type="checkbox" name="social_media" value="Twitter"> Twitter</label>
+                    <label class="checkbox-item"><input type="checkbox" name="social_media" value="Youtube"> Youtube</label>
+                    <label class="checkbox-item"><input type="checkbox" name="social_media" value="other"> Lainnya...</label>
+                </div>
+            </div>
+            
+            <div>
+                <p>2. Dalam sehari, berapa lama kamu habiskan untuk bersosial media?</p>
+                <div class="radio-group">
+                    <label class="radio-item"><input type="radio" name="duration" value="less1"> Kurang dari 1 jam</label>
+                    <label class="radio-item"><input type="radio" name="duration" value="1-3"> 1-3 jam</label>
+                    <label class="radio-item"><input type="radio" name="duration" value="3-5"> 3-5 jam</label>
+                    <label class="radio-item"><input type="radio" name="duration" value="more5"> Lebih dari 5 jam</label>
+                </div>
+            </div>
+            
+            <div>
+                <p>3. Media sosial apa yang sering kamu gunakan?</p>
+                <div class="radio-group">
+                    <label class="radio-item"><input type="radio" name="most_used" value="Instagram"> Instagram</label>
+                    <label class="radio-item"><input type="radio" name="most_used" value="Tiktok"> Tiktok</label>
+                    <label class="radio-item"><input type="radio" name="most_used" value="Facebook"> Facebook</label>
+                    <label class="radio-item"><input type="radio" name="most_used" value="Twitter"> Twitter</label>
+                    <label class="radio-item"><input type="radio" name="most_used" value="Youtube"> Youtube</label>
+                    <label class="radio-item"><input type="radio" name="most_used" value="other"> Lainnya...</label>
+                </div>
+            </div>
+        </fieldset>
+        
+        <div style="text-align: center;">
+            <button type="submit" class="btn-submit">Submit</button>
+        </div>
+    </form>
+</body>
+</html>
