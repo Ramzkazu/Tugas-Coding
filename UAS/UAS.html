@@ -6,6 +6,383 @@
     <title>Ramz Store - Top Up Game Terpercaya</title>
     <link rel="shortcut icon" href="image/logo.PNG" type="image/x-icon">
     <link rel="stylesheet" href="bootstrap.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-image: url(image/3d-rendering-hexagonal-texture-background.jpg);
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            min-height: 100vh;
+            color: #ede9e9;
+            position: relative;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(252, 1, 1, 0.2);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: rgb(246, 246, 246);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+        }
+
+        .nav-links a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 4rem 0;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #ef0000, #4c0000db);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        /* Games Grid */
+        .games-section {
+            padding: 4rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: white;
+            margin-bottom: 3rem;
+        }
+
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .game-card {
+            background: rgba(255, 254, 254, 0);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            border: 1px solid rgba(243, 4, 4, 0.227);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .game-card:hover {
+            transform: translateY(-10px);
+            background: rgba(0, 0, 0, 0.15);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .game-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #ff0101, #000101);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .game-icon img {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+            border-radius: 10px;
+        }
+
+        .game-card h3 {
+            color: rgb(255, 55, 55);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .game-card p {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 1.5rem;
+        }
+
+        .btn {
+            background: linear-gradient(45deg, #f80404, #000105);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(247, 0, 0, 0.2);
+            filter: brightness(1.1);
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            background: linear-gradient(135deg, rgba(230, 3, 3, 0.1), rgba(228, 13, 13, 0.05));
+            backdrop-filter: blur(20px);
+            margin: 5% auto;
+            padding: 2rem;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 500px;
+            border: 1px solid rgb(255, 0, 0);
+            position: relative;
+        }
+
+        .close {
+            color: rgb(255, 0, 0);
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .close:hover {
+            transform: scale(1.2);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            color: rgb(219, 18, 18);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid rgba(198, 15, 15, 0.3);
+            border-radius: 10px;
+            background: rgba(255, 253, 253, 0.1);
+            color: rgb(226, 35, 18);
+            font-size: 1rem;
+        }
+
+        .form-group input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #cd4e4e;
+            box-shadow: 0 0 10px rgba(78, 205, 196, 0.3);
+        }
+
+        .payment-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .payment-method {
+            background: rgba(12, 161, 207, 0.1);
+            border: 2px solid transparent;
+            border-radius: 10px;
+            padding: 1rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: white;
+        }
+
+        .payment-method:hover,
+        .payment-method.selected {
+            border-color: #de1818;
+            background: rgba(207, 16, 16, 0.2);
+        }
+
+         /* Features */
+        .features h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #db3434;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .feature {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .feature-icon {
+            font-size: 5rem;
+            margin-bottom: 25px;
+        }
+
+        .feature h3 {
+            margin-bottom: 10px;
+            color: #ed1818;
+        }
+        
+        /* Footer */
+        footer {
+            background: rgba(0, 0, 0, 0.3);
+            color: white;
+            padding: 3rem 0 1rem 0;
+            margin-top: 5rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: rgb(224, 26, 26);
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section ul li a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section ul li a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            opacity: 0.8;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .games-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .modal-content {
+                margin: 10% auto;
+                width: 95%;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .game-card {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .game-card:nth-child(1) { animation-delay: 0.1s; }
+        .game-card:nth-child(2) { animation-delay: 0.2s; }
+        .game-card:nth-child(3) { animation-delay: 0.3s; }
+        .game-card:nth-child(4) { animation-delay: 0.4s; }
+        .game-card:nth-child(5) { animation-delay: 0.5s; }
+        .game-card:nth-child(6) { animation-delay: 0.6s; }
+    </style>
 </head>
 <body>
     
@@ -50,6 +427,12 @@
                 <img src="image/Ilustrasi-Free-Fire-dari-game-online-Garena-removebg-preview.png" height="150" alt="Free Fire">
                 <h3>Free Fire</h3>
                 <p>Top up diamond Free Fire untuk karakter dan senjata terkeren</p>
+                <button class="btn">Top Up Sekarang</button>
+            </div>
+            <div class="game-card" onclick="openModal('Valorant')">
+                <img src="image/valorant-removebg-preview.png" height="150" alt="Free Fire">
+                <h3>Valorant</h3>
+                <p>Beli VP Valorant untuk skin senjata dan battle pass</p>
                 <button class="btn">Top Up Sekarang</button>
             </div>
         </div>
@@ -213,6 +596,27 @@
                 { value: '1450-diamonds', text: '1450 Diamond - Rp 200.000' },
                 { value: '2180-diamonds', text: '2180 Diamond - Rp 300.000' }
             ],
+            'Valorant': [
+                { value: '420-vp', text: '420 VP - Rp 45.000' },
+                { value: '700-vp', text: '700 VP - Rp 75.000' },
+                { value: '1375-vp', text: '1375 VP - Rp 150.000' },
+                { value: '2400-vp', text: '2400 VP - Rp 250.000' },
+                { value: '4000-vp', text: '4000 VP - Rp 400.000' },
+                { value: '8150-vp', text: '8150 VP - Rp 800.000' }
+            ],
+            'Genshin Impact': [
+                { value: '60-genesis', text: '60 Genesis Crystal - Rp 15.000' },
+                { value: '300-genesis', text: '300 Genesis Crystal - Rp 75.000' },
+                { value: '980-genesis', text: '980 Genesis Crystal - Rp 250.000' },
+                { value: '1980-genesis', text: '1980 Genesis Crystal - Rp 500.000' },
+                { value: '3280-genesis', text: '3280 Genesis Crystal - Rp 800.000' },
+                { value: '6480-genesis', text: '6480 Genesis Crystal - Rp 1.600.000' }
+            ],
+            'Roblox Gift Cards': [
+                { value: 'Roblox Gift Card 100000', text: 'Roblox Gift Card 100000 - Rp 100.000' },
+                { value: 'Roblox Gift Card 200000', text: 'Roblox Gift Card 200000 - Rp 200.000' },
+                { value: 'Roblox Gift Card 300000', text: 'Roblox Gift Card 300000 - Rp 300.000' },
+            ]
             
         };
 
