@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ramz Store - Top Up Game Terpercaya</title>
+    <link rel="shortcut icon" href="image/logo.PNG" type="image/x-icon">
+    <link rel="stylesheet" href="bootstrap.css">
+</head>
+<body>
+    
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <a href="#home" class="logo"><img src="image/IMG_7052 (1).png" alt="logo" width="10%" height="15%"></a>
+            <ul class="nav-links">
+                <li><a href="#home">Beranda</a></li>
+                <li><a href="#games">Games</a></li>
+                <li><a href="#about">Tentang</a></li>
+                <li><a href="#contact">Kontak</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero container" id="home">
+        <h1>Top Up Game Tercepat</h1>
+        <p>Top up diamond, UC dan coins  untuk semua game favoritmu dengan mudah dan aman!</p>
+    </section>
+
+    <!-- Games Section -->
+    <section class="games-section container" id="games">
+        <h2 class="section-title">Pilih Game Favorit Kamu</h2>
+        <div class="games-grid">
+            <div class="game-card" onclick="openModal('Mobile Legends')">
+                <img src="image/mobilelegend.png" height="150" alt="Mobile Legends">
+                <h3>Mobile Legends</h3>
+                <p>Top up diamond ML dengan harga terbaik dan proses tercepat</p>
+                <button class="btn">Top Up Sekarang</button>
+            </div>
+            
+            <div class="game-card" onclick="openModal('PUBG Mobile')">
+                <img src="image/hd-pubg-white-logo-grunge-style-7017516947905938pn7ahh4yb-removebg-preview.png" height="150" alt="PUBG Mobile">
+                <h3>PUBG Mobile</h3>
+                <p>Beli UC PUBG untuk upgrade senjata dan skin terbaru</p>
+                <button class="btn">Top Up Sekarang</button>
+            </div>
+            
+            <div class="game-card" onclick="openModal('Free Fire')">
+                <img src="image/Ilustrasi-Free-Fire-dari-game-online-Garena-removebg-preview.png" height="150" alt="Free Fire">
+                <h3>Free Fire</h3>
+                <p>Top up diamond Free Fire untuk karakter dan senjata terkeren</p>
+                <button class="btn">Top Up Sekarang</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features container" id="about">
+        <h2 class="section-title">Mengapa Pilih Ramz Store?</h2>
+        <div class="features-grid" >
+            <div class="feature">
+                <div class="feature-icon">⚡</div>
+                <h3>Proses Instan</h3>
+                <p>Top up langsung masuk dalam hitungan detik</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🔒</div>
+                <h3>100% Aman</h3>
+                <p>Transaksi dijamin aman dengan enkripsi SSL</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🎧</div>
+                <h3>Support 24/7</h3>
+                <p>Customer service siap membantu kapan saja</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">💰</div>
+                <h3>Harga Terbaik</h3>
+                <p>Dapatkan harga termurah se-Indonesia</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div id="topupModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="modalTitle" style="color: white; margin-bottom: 2rem; text-align: center;">Top Up Mobile Legends</h2>
+            
+            <form id="topupForm">
+                <div class="form-group">
+                    <label for="userId">ID Player / User ID</label>
+                    <input type="text" id="userId" placeholder="Masukkan ID Player" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="server">Server (Opsional)</label>
+                    <input type="text" id="server" placeholder="Contoh: 1234">
+                </div>
+                
+                <div class="form-group">
+                    <label for="package">Pilih Paket</label>
+                    <select id="package" required>
+                        <option value="">Pilih Paket Top Up</option>
+                        <option value="86-diamonds">86 Diamond - Rp 20.000</option>
+                        <option value="172-diamonds">172 Diamond - Rp 40.000</option>
+                        <option value="257-diamonds">257 Diamond - Rp 60.000</option>
+                        <option value="344-diamonds">344 Diamond - Rp 80.000</option>
+                        <option value="429-diamonds">429 Diamond - Rp 100.000</option>
+                        <option value="514-diamonds">514 Diamond - Rp 120.000</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label>Metode Pembayaran</label>
+                    <div class="payment-methods">
+                        <div class="payment-method" onclick="selectPayment('dana')">
+                            <div><img src="image/dana.jpg" height="30" alt=""></div>
+                            <div>DANA</div>
+                        </div>
+                        <div class="payment-method" onclick="selectPayment('ovo')">
+                            <div><img src="image/ovo.png" height="30" alt=""></div>
+                            <div>OVO</div>
+                        </div>
+                        <div class="payment-method" onclick="selectPayment('gopay')">
+                            <div><img src="image/gopay.png" height="30" alt=""></div>
+                            <div>GoPay</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="whatsapp">Nomor WhatsApp</label>
+                    <input type="tel" id="whatsapp" placeholder="08xxxxxxxxxx" required>
+                </div>
+                
+                <button type="submit" class="btn" style="width: 100%; margin-top: 1rem;">
+                    🛒 Bayar Sekarang
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container" id="contact">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Ramz Store</h3>
+                    <p>Platform top up game terpercaya dengan layanan 24/7 dan harga terbaik.</p>
+                    <div style="margin-top: 1rem;">
+                        <strong>Rating:</strong> ⭐⭐⭐⭐⭐ 4.9/5.0
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Games Populer</h3>
+                    <ul>
+                        <li><a href="#" onclick="openModal('Mobile Legends')">Mobile Legends</a></li>
+                        <li><a href="#" onclick="openModal('PUBG Mobile')">PUBG Mobile</a></li>
+                        <li><a href="#" onclick="openModal('Free Fire')">Free Fire</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Pembayaran</h3>
+                    <ul>
+                        <li>💳 E-Wallet (DANA, OVO, GoPay)</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Hubungi Kami</h3>
+                    <ul>
+                        <li>📞 WhatsApp: +62 823-8889-5914</li>
+                        <li>📧 Email: Ramzstore@gmail.com</li>
+                        <li>🕐 Layanan: 24/7</li>
+                        <li>📍 Aceh, Indonesia</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Ramz Store. Semua hak dilindungi</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        let selectedPayment = '';
+        let currentGame = '';
+
+        // Nominal Top Up
+        const gamePackages = {
+            'Mobile Legends': [
+                { value: '86-diamonds', text: '86 Diamond - Rp 20.000' },
+                { value: '172-diamonds', text: '172 Diamond - Rp 40.000' },
+                { value: '257-diamonds', text: '257 Diamond - Rp 60.000' },
+                { value: '344-diamonds', text: '344 Diamond - Rp 80.000' },
+                { value: '429-diamonds', text: '429 Diamond - Rp 100.000' },
+                { value: '514-diamonds', text: '514 Diamond - Rp 120.000' }
+            ],
+            'PUBG Mobile': [
+                { value: '60-uc', text: '60 UC - Rp 15.000' },
+                { value: '325-uc', text: '325 UC - Rp 75.000' },
+                { value: '660-uc', text: '660 UC - Rp 150.000' },
+                { value: '1800-uc', text: '1800 UC - Rp 375.000' },
+                { value: '3850-uc', text: '3850 UC - Rp 750.000' },
+                { value: '8100-uc', text: '8100 UC - Rp 1.500.000' }
+            ],
+            'Free Fire': [
+                { value: '70-diamonds', text: '70 Diamond - Rp 10.000' },
+                { value: '140-diamonds', text: '140 Diamond - Rp 20.000' },
+                { value: '355-diamonds', text: '355 Diamond - Rp 50.000' },
+                { value: '720-diamonds', text: '720 Diamond - Rp 100.000' },
+                { value: '1450-diamonds', text: '1450 Diamond - Rp 200.000' },
+                { value: '2180-diamonds', text: '2180 Diamond - Rp 300.000' }
+            ],
+            
+        };
+
+        function openModal(gameName) {
+            currentGame = gameName;
+            document.getElementById('modalTitle').textContent = `Top Up ${gameName}`;
+            document.getElementById('topupModal').style.display = 'block';
+            
+            // Update package options
+            const packageSelect = document.getElementById('package');
+            packageSelect.innerHTML = '<option value="">Pilih Paket Top Up</option>';
+            
+            if (gamePackages[gameName]) {
+                gamePackages[gameName].forEach(pkg => {
+                    const option = document.createElement('option');
+                    option.value = pkg.value;
+                    option.textContent = pkg.text;
+                    packageSelect.appendChild(option);
+                });
+            }
+            
+            // Reset form
+            document.getElementById('topupForm').reset();
+            selectedPayment = '';
+            document.querySelectorAll('.payment-method').forEach(method => {
+                method.classList.remove('selected');
+            });
+        }
+
+        function closeModal() {
+            document.getElementById('topupModal').style.display = 'none';
+        }
+
+        function selectPayment(method) {
+            selectedPayment = method;
+            document.querySelectorAll('.payment-method').forEach(pm => {
+                pm.classList.remove('selected');
+            });
+            event.target.closest('.payment-method').classList.add('selected');
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('topupModal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+
+        // Form submission
+        document.getElementById('topupForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            if (!selectedPayment) {
+                alert('Silakan pilih metode pembayaran!');
+                return;
+            }
+            
+            const formData = {
+                game: currentGame,
+                userId: document.getElementById('userId').value,
+                server: document.getElementById('server').value,
+                package: document.getElementById('package').value,
+                payment: selectedPayment,
+                whatsapp: document.getElementById('whatsapp').value
+            };
+            
+            // Simulate order processing
+            alert(`Pesanan berhasil dibuat!\n\nDetail:\n- Game: ${formData.game}\n- ID: ${formData.userId}\n- Paket: ${document.getElementById('package').selectedOptions[0].text}\n- Pembayaran: ${selectedPayment.toUpperCase()}\n\nSilakan lanjutkan pembayaran melalui WhatsApp: ${formData.whatsapp}`);
+            
+            closeModal();
+        });
+
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
